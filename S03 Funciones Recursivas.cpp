@@ -14,8 +14,10 @@ int impar(int);
 int opcion, numero;
 char continuar;
 
+// Funcion main con menu 
 int main()
 {
+    // Ocupamos un Do While para mostrar un menu y permitir seleccionar cualquier opcion
     do
     {   
         // Limpiamos la consola antes de imprimir el menu
@@ -92,7 +94,7 @@ void cuentaRegresiva(int n)
     }
 }
 
-// El factorial es igual al mismo numero multiplicado por si mismo (ejemplo factorial de 5 es 5*5*5*5*5)
+// El factorial es igual al mismo numero multiplicado por si mismo (ejemplo factorial de 5 es 5*4*3*2*1)
 int factorial(int n)
 {
     if (n == 0 || n == 1)
