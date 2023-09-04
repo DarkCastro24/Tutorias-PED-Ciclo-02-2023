@@ -1,34 +1,29 @@
 #include <iostream>
-#include <cstdlib> // Libreria necesaria para malloc y free
 
 using namespace std;
 
-int main() 
+int main()
 {
-    // Declaramos un puntero
+    // Creamos un puntero
     int *ptr;
-
-    // Reservar memoria para un entero
+    // Inicializamos el puntero (Reservamos memoria)
     ptr = new int;
-
-    // Le asignamos un valor al puntero
+    // Asignamos el valor al puntero
     *ptr = 42;
 
-    // Verificamos si se asigno la memoria
-    if (ptr != NULL)
+    // Validamos si el puntero tiene memoria asignada 
+    if (ptr == NULL)
     {
-        // Utilizamos el valor del puntero
-        cout << "Valor del puntero: " << *ptr << endl;
+        // Si no tiene memoria es null y mostramos el mensaje
+        cout << "Error de asignacion de memoria!!!!";
+        // Finalizamos la ejecucion del programa
+        exit(1);
     }
     else
     {
-        // Mostramos mensaje de error
-        cout << "Error de asignación de memoria";
-        exit(1);
+        // Mostramos el valor del puntero si existe direccion de memoria
+        cout << "Valor del puntero: " << *ptr  << endl;
     }
-
-    // Liberar la memoria asignada al puntero
+    // Liberamos la memoria
     delete ptr;
-
-    return 0;
 }

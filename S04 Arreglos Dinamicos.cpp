@@ -4,31 +4,32 @@ using namespace std;
 
 int main()
 {
-    // Variable para guardar el tamaño del arreglo
+    // Variable para almacenar el tamaño del arreglo
     int tamanio;
 
-    // Solicitamos el tamaño del arreglo
-    cout << "Ingrese el tamanio del arreglo dinamico: ";
+    // Se solicita el tamaño del arreglo al usuario 
+    cout  << "Ingrese el tamanio del arreglo: " << endl;
     cin >> tamanio;
 
-    // Creamos el arreglo dinamico
+    // Creamos el arreglo dinamico con el tamaño ingresado anteriormente
     int *arreglo = new int[tamanio];
 
-    // Asignamos los valores al arreglo dinámico
+    // Llenamos el arreglo 
     for (int i = 0; i < tamanio; i++)
     {
         arreglo[i] = i + 1;
     }
 
-    // Acceder e imprimir los valores
+    // Mostramos mensaje 
+    cout << "Imprimiendo numeros del arreglo: ";
+
+    // Imprimimos el contenido del arreglo
     for (int i = 0; i < tamanio; i++)
     {
-        cout << arreglo[i] << " ";
+        cout << arreglo[i] << "  ";
     }
-    cout << endl;
-
-    // Liberacion de memoria
+    
+    // Liberamos la memoria 
     delete[] arreglo;
-
-    return 0;
 }
+    

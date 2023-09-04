@@ -2,26 +2,25 @@
 
 using namespace std;
 
-int main() 
+int main()
 {
-    // Declaramos una variable
+    // Variable normal
     int numero = 42;
-    // Declaración del puntero a la variable
-    int *puntero; 
+    
+    // Puntero de la variable
+    int *puntero;
 
-    // Asignación de la dirección de memoria de 'numero' al puntero
-    puntero = &numero; 
+    // Asignamos el puntero para 'numero'
+    puntero = &numero;
 
-    // Formas de mostrar informacion del puntero
-    cout << "Valor de 'numero': " << numero << endl;
-    cout << "Dirección de 'numero': " << &numero << endl;
-    cout << "Valor a través del puntero: " << *puntero << endl;
-    cout << "Dirección almacenada en el puntero: " << puntero << endl;
-
+    // Acciones con punteros
+    cout  << "Valor de 'numero': " << numero << endl;
+    cout << "Direccion de memoria de 'numero': " << &numero << endl;
+    cout << "Valor de la 'numero' a traves de puntero: " << *puntero << endl;
+    cout << "Direccion almacenada en el puntero: "  << puntero << endl;
+    
     return 0;
-}
-
-
+ }
 
 
 
