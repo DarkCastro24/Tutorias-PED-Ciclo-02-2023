@@ -8,7 +8,7 @@ int main()
     /*
         Formas de inicializar arreglos:
         int numeros [] = {1,2,3,4,5};
-        int numeros [3] = {1,2,3};
+        int numeros [] = {1,2,3};
         int numeros[2]; numeros[0] = 1; numeros[1] = 2;
         Tipos de arreglo: Todos los tipos de datos que posee C++ pueden ser declarados como arreglos (exceptuando void)
 
