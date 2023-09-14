@@ -1,17 +1,15 @@
 #include <iostream>
 
 using namespace std;
-// Variable global
+
 struct Nodo *pila = NULL;
 
-// Declarando funciones
+// Declarando funciones 
 void Insertar(int);
 void EliminarUltimo(int &);
 void Imprimir();
 bool Vacia();
 int UltimoElemento();
-
-// Un nodo tiene un dato, el cual es el elemento y  otro nodo al que apunta
 
 struct Nodo
 {
@@ -21,30 +19,57 @@ struct Nodo
 
 int main()
 {
-    int valor; 
-    cout<<"Ingrese un valor ";
-    cin>>valor;  
+    int valor;
+    cout << "Ingrese un valor: ";
+    cin >> valor;
     Insertar(valor);
-    cout<<Vacia()<<endl;
-    //cout<<UltimoElemento();
+    // Retorno 0 es igual a FALSE
+    cout << "Estado de la pila: " << Vacia() << endl;
     Imprimir();
     EliminarUltimo(valor);
-    cout<<Vacia()<<endl;
+    // Retorno 1 es igual a TRUE
+    cout << "Estado de la pila: " << Vacia() << endl;
     return 0;
 }
 
-// Operacion Push
-void Insertar(int n)
+void Insertar(int numero)
 {
-    // Reserva de memoria
     struct Nodo *nuevoNodo = new Nodo();
-    // asignar el valor
-    nuevoNodo->elemento = n;
+    nuevoNodo->elemento = numero;
     nuevoNodo->siguiente = pila;
     pila = nuevoNodo;
 }
 
-// Operación Pop
+bool Vacia()
+{
+    return pila == NULL;
+}
+
+void Imprimir()
+{
+    struct Nodo *temporal = pila;
+    while (temporal != NULL)
+    {
+        cout << "Elementos de la pila " << temporal->elemento << endl;
+        temporal = temporal->siguiente;
+    }
+    
+}
+
+int UltimoElemento() 
+{
+    if (pila == NULL)
+    {
+        return -1;
+    }
+    else
+    {
+        return pila->elemento;
+    }
+    
+}
+
+// Operacion POP
 void EliminarUltimo(int &n)
 {
     if (pila != NULL)
@@ -54,35 +79,5 @@ void EliminarUltimo(int &n)
         pila = temporal->siguiente;
         delete temporal;
     }
-}
-
-// Imprimir la pila
-void Imprimir(){
-    //int contador; 
-    struct Nodo *temporal = pila; 
-    while (temporal != NULL)
-    {
-        cout<<"Elementos de la pila"<<temporal->elemento<<endl;
-        temporal = temporal->siguiente; 
-    }
     
-    
-}
-
-// Operacion Pila vacia
-bool Vacia()
-{
-    // Si devuelve 1 la pila esta vacia
-    // Si devuelve 0 la pila no esta vacia
-    return pila == NULL;
-}
-
-// Operación Top
-int UltimoElemento()
-{
-    if (pila == NULL){
-        return -1;
-    }else {
-        return pila->elemento;    
-    }
 }
