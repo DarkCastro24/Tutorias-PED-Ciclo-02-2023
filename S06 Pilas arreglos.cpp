@@ -48,12 +48,12 @@ int Llena(Pila *p)
     // Le restamos uno porque el index es uno menos que el numero de elementos que contiene
     if (p->cima == tam_max -1)
     {
-        // La pila esta vacia
+        // La pila esta llena
         return true;    
     }
     else
     {
-        // La pila no esta vacia
+        // La pila no esta llena
         return false;
     }
 }
