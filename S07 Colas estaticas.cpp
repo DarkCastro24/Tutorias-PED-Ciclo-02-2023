@@ -8,18 +8,21 @@ using namespace std;
 // Estructura de datos
 struct Nodo
 {
-    int frenteCola;
-    int finalCola;
+    int frenteCola; // Es el primer elemento que se ingreso
+    int finalCola; // Es el ultimo elemento ingresado
     int elemento[tamano];
 } nodo;
 
+// [-1 0 1 2 3 4]
+//   0 1 2 3 4 5
+
 // Declaracion de funciones de colas
-void Crear(struct Nodo *);
-bool Vacia(struct Nodo *);
-int Llena(Nodo *);
-void Insertar(struct Nodo *, int);
-void Mover(struct Nodo *);
-void Eliminar(struct Nodo *);
+void Crear(struct Nodo *); // queue <tipo>
+bool Vacia(struct Nodo *); // empty
+int Llena(Nodo *); // No existe en la libreria 
+void Insertar(struct Nodo *, int); // Push 
+void Mover(struct Nodo *); // Lo hace dentro de eliminar 
+void Eliminar(struct Nodo *); // Pop
 
 int main()
 {
@@ -70,8 +73,10 @@ bool Vacia(Nodo *p)
 // Validamos si la cola esta llena
 int Llena(Nodo *p)
 {
+    // Elementos  [7 5 9 5 8]
+    // Posiciones [0 1 2 3 4]
     // Si tiene el tamaño de la constante menos uno esta llena
-    if (p->finalCola == tamano - 1)
+    if (p->finalCola == tamano-1)
     {
         return true;
     }
@@ -112,6 +117,8 @@ void Mover(Nodo *p)
     // Restamos uno al final de la cola (al haber eliminado el elemento)
     p->finalCola--;
 }
+
+// [ , 2 , 3, 4]
 
 // Desencolar -- inicio de la lista
 void Eliminar(Nodo *p)

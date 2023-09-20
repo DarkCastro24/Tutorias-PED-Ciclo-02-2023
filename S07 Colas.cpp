@@ -10,13 +10,15 @@ int main()
     // Crear una cola de enteros
     queue<int> cola;
 
-    // Agregar elementos a la cola
-    cola.push(10);
-    cola.push(20);
-    cola.push(30);
-    cola.push(40);
-    cola.push(50);
-
+    int tamanio;
+    cout << "Ingrese el numero de elementos a ingresar en la cola: ";
+    cin >> tamanio;
+    
+    for (int i = 0; i < tamanio; i++)
+    {
+        cola.push(i+1);
+    }
+    cout << endl;
     // Acceder al elemento del frente de la cola
     int frente = cola.front();
     cout << "Elemento del frente de la cola: " << frente << endl;
