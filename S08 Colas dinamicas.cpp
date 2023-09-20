@@ -14,31 +14,48 @@ struct Nodo *frenteCola = NULL;
 struct Nodo *finalCola = NULL;
 
 // Declaracion de las funciones
-bool Vacia();
-void Insertar(int);
-int Eliminar(int &);
-void Imprimir();
-void ImprimirFrente();
-void ImprimirFinal();
+bool Vacia(); // Empty
+void Insertar(int); // Push
+int Eliminar(int &); // Pop
+void Imprimir(); // Mostramos todos los elementos de la cola 
+void ImprimirFrente(); // Primer elemento ingresado
+void ImprimirFinal(); // Ultimo elemento ingresado 
 
 int main()
 {
-    int valor;
-    cout << "Ingresar valor";
-    cin >> valor;
-    Insertar(valor);
-    cout << "Ingresar valor";
-    cin >> valor;
-    Insertar(valor);
+    // Variable para almacenar los valores a ingresar 
+    int tamanio;
+    
+    // Solicitamos el tamaño de la cola 
+    cout << "Ingrese el tamanio de la cola: ";
+    cin >> tamanio;
+
+    // Llenamos la cola con numeros del 1 al numero ingresado 
+    for (int i = 0; i < tamanio; i++)
+    {
+        Insertar(i+1);
+    }
+
+    cout << "\n--->   Datos guardados dentro de la cola   <---\n" << endl;
+    
+    // Imprimos los datos 
+    Imprimir(); 
+    cout << endl; 
+
+    // Eliminamos el elemento del frente de la cola (Primer elemento ingresado "1")
+    Eliminar(frenteCola->dato);
+    
+    cout << "Borramos el frente de la cola" << endl;
+    // Volvemos a imprimir la cola
     Imprimir();
-    Eliminar(valor);
-    Imprimir();
+    cout << endl;
     ImprimirFrente();
     ImprimirFinal(); 
+     
     return 0;
 }
 
-// Operación vacia
+// Funcion Empty 
 bool Vacia()
 {
     if (frenteCola == NULL)
@@ -51,7 +68,7 @@ bool Vacia()
     }
 }
 
-// Encolar -- final de la lista
+// Push (Agregar al final de la cola)
 void Insertar(int n)
 {
     // Reserva de memoria
@@ -71,7 +88,7 @@ void Insertar(int n)
     finalCola = nuevoNodo;
 }
 
-// Desencolar -- inicio de la lista
+// Pop (Eliminar el frente de la cola)
 int Eliminar(int &n)
 {
     if (!Vacia())
@@ -96,13 +113,13 @@ int Eliminar(int &n)
     }
 }
 
-// Imprimir elementos de la cola
+// Imprimir todos los elementos de la cola
 void Imprimir()
 {
     struct Nodo *temporal = frenteCola;
     while (temporal != NULL)
     {
-        cout << "Elementos de la cola" << temporal->dato << endl;
+        cout << "Elementos de la cola: " << temporal->dato << endl;
         temporal = temporal->siguiente;
     }
 }
@@ -113,7 +130,7 @@ void ImprimirFrente()
     struct Nodo *temporal = frenteCola;
     if (temporal != NULL)
     {
-        cout << "Frente cola" << temporal->dato;
+        cout << "Elemento del frente de la cola: " << temporal->dato << endl;
     }
 }
 
@@ -123,6 +140,6 @@ void ImprimirFinal()
     struct Nodo *temporal = finalCola;
     if (temporal != NULL)
     {
-        cout << "Final cola" << temporal->dato;
+        cout << "Elemento del final de cola: " << temporal->dato << endl;
     }
 }
