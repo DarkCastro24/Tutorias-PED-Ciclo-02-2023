@@ -24,22 +24,22 @@ int main() {
     agregar(cabeza, 3);
     agregar(cabeza, 4);
 
-    std::cout << "Lista original: ";
+    cout << "Lista original: ";
     mostrar(cabeza);
 
     eliminar(cabeza, 2);
-    std::cout << "Lista despues de eliminar 2: ";
+    cout << "Lista despues de eliminar 2: ";
     mostrar(cabeza);
 
     modificar(cabeza, 3, 5);
-    std::cout << "Lista despues de modificar 3 a 5: ";
+    cout << "Lista despues de modificar 3 a 5: ";
     mostrar(cabeza);
 
     bool encontrado = buscar(cabeza, 4);
     if (encontrado) {
-        std::cout << "El valor 4 esta en la lista." << std::endl;
+        cout << "El valor 4 esta en la lista." << endl;
     } else {
-        std::cout << "El valor 4 no esta en la lista." << std::endl;
+        cout << "El valor 4 no esta en la lista." << endl;
     }
 
     return 0;
@@ -85,10 +85,10 @@ void eliminar(Nodo*& cabeza, int valor) {
 void mostrar(Nodo* cabeza) {
     Nodo* actual = cabeza;
     while (actual) {
-        std::cout << actual->dato << " ";
+        cout << actual->dato << " ";
         actual = actual->siguiente;
     }
-    std::cout << std::endl;
+    cout << endl;
 }
 
 // Función para buscar un valor en la lista
