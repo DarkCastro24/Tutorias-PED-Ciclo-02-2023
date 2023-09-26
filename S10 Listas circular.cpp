@@ -25,12 +25,15 @@ int main()
     InsertarInicio(60);
     InsertarFinal(20);
     InsertarInicio(15);
+
     // Imprimiendo los datos de la lista
     Imprimir();
     cout << "--->   Eliminando dos  <---" << endl;
+    
     // Eliminamos el inicio y el final
     EliminarInicio();
     EliminarFinal();
+    
     // Volvemos a imprimir
     Imprimir();
 
